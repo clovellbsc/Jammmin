@@ -1,5 +1,5 @@
 const SPOTIFY_API_KEY = process.env.REACT_APP_SPOTIFY_API_KEY;
-const redirectURI = "http://localhost:3000/";
+const redirectURI = "http://jammmin-playlist-creator.surge.sh";
 let accessToken;
 
 const Spotify = {
