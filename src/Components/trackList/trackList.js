@@ -1,19 +1,25 @@
 import React from "react";
 import "./trackList.css";
-import { Track } from "../track/track";
+import Track from "../track/track";
 
-export class TrackList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+class TrackList extends React.Component {
   render() {
     return (
       <div className="TrackList">
-        <p>Bat Out Of Hell - Meatloaf</p>
-        <p>Rebel Yell - Billy Idol</p>
-        <p>Highway To Hell - ACDC</p>
+        {this.props.tracks.map((track) => {
+          return (
+            <Track
+              track={track}
+              key={track.id}
+              onAdd={this.props.onAdd}
+              onRemove={this.props.onRemove}
+              isRemoval={this.props.isRemoval}
+            />
+          );
+        })}
       </div>
     );
   }
 }
+
+export default TrackList;
